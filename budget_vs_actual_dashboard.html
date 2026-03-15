@@ -1,0 +1,139 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:var(--font-sans)}
+.db2{background:var(--color-background-tertiary);padding:16px;border-radius:12px}
+.hdr2{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--color-border-tertiary)}
+.pg-title{font-size:15px;font-weight:500}
+.sub{font-size:11px;color:var(--color-text-secondary)}
+.slicers{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.slicer-chip{font-size:11px;padding:4px 10px;border-radius:20px;border:0.5px solid var(--color-border-secondary);background:var(--color-background-secondary);color:var(--color-text-secondary);cursor:pointer}
+.slicer-chip.active{background:var(--color-background-info);color:var(--color-text-info);border-color:var(--color-border-info)}
+.top-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px}
+.kpi2{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:10px;padding:12px 14px}
+.kpi-l{font-size:11px;color:var(--color-text-secondary);margin-bottom:3px}
+.kpi-v{font-size:20px;font-weight:500;line-height:1}
+.kpi-s{font-size:10px;margin-top:4px}
+.green{color:#3B6D11}.red{color:#A32D2D}.amber{color:#854F0B}
+.main-row{display:grid;grid-template-columns:3fr 2fr;gap:10px}
+.card2{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:10px;padding:12px 14px}
+.ct{font-size:12px;font-weight:500;color:var(--color-text-secondary);margin-bottom:10px}
+table{width:100%;border-collapse:collapse;font-size:11px}
+th{text-align:left;padding:5px 8px;background:var(--color-background-secondary);color:var(--color-text-secondary);border-bottom:0.5px solid var(--color-border-tertiary);font-weight:500}
+td{padding:5px 8px;border-bottom:0.5px solid var(--color-border-tertiary);color:var(--color-text-primary)}
+tr:last-child td{border-bottom:none;font-weight:500;background:var(--color-background-secondary)}
+.pill{display:inline-block;padding:2px 7px;border-radius:10px;font-size:10px}
+.pill-g{background:var(--color-background-success);color:var(--color-text-success)}
+.pill-r{background:var(--color-background-danger);color:var(--color-text-danger)}
+.pill-a{background:var(--color-background-warning);color:var(--color-text-warning)}
+</style>
+<div class="db2">
+  <div class="hdr2">
+    <div>
+      <div class="pg-title">Budget vs Actual Analysis</div>
+      <div class="sub">Q1–Q4 FY 2024 &nbsp;|&nbsp; All Departments</div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <select style="font-size:11px;padding:3px 6px;border-radius:6px;border:0.5px solid var(--color-border-secondary)"><option>All Departments</option></select>
+      <select style="font-size:11px;padding:3px 6px;border-radius:6px;border:0.5px solid var(--color-border-secondary)"><option>FY 2024</option></select>
+    </div>
+  </div>
+
+  <div class="slicers">
+    <span class="slicer-chip active">All Quarters</span>
+    <span class="slicer-chip">Q1</span>
+    <span class="slicer-chip">Q2</span>
+    <span class="slicer-chip">Q3</span>
+    <span class="slicer-chip">Q4</span>
+  </div>
+
+  <div class="top-row">
+    <div class="kpi2"><div class="kpi-l">Annual Budget</div><div class="kpi-v">$10.74M</div><div class="kpi-s" style="color:var(--color-text-secondary)">Across 10 departments</div></div>
+    <div class="kpi2"><div class="kpi-l">YTD Actual</div><div class="kpi-v">$10.55M</div><div class="kpi-s green">▼ $0.19M under budget</div></div>
+    <div class="kpi2"><div class="kpi-l">Budget Utilization</div><div class="kpi-v">97.3%</div><div class="kpi-s green">✓ Within target range</div></div>
+  </div>
+
+  <div class="main-row">
+    <div class="card2">
+      <div class="ct">Department Budget vs Actual — Full Year</div>
+      <table>
+        <thead><tr><th>Department</th><th>Budget</th><th>Actual</th><th>Variance</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Sales</td><td>$1,800K</td><td>$1,710K</td><td class="green">-$90K</td><td><span class="pill pill-g">On Track</span></td></tr>
+          <tr><td>Marketing</td><td>$1,200K</td><td>$1,180K</td><td class="green">-$20K</td><td><span class="pill pill-g">On Track</span></td></tr>
+          <tr><td>Operations</td><td>$2,100K</td><td>$2,090K</td><td class="green">-$10K</td><td><span class="pill pill-g">On Track</span></td></tr>
+          <tr><td>HR</td><td>$720K</td><td>$698K</td><td class="green">-$22K</td><td><span class="pill pill-g">On Track</span></td></tr>
+          <tr><td>IT</td><td>$1,040K</td><td>$1,055K</td><td class="red">+$15K</td><td><span class="pill pill-a">Review</span></td></tr>
+          <tr><td>Finance</td><td>$560K</td><td>$554K</td><td class="green">-$6K</td><td><span class="pill pill-g">On Track</span></td></tr>
+          <tr><td>R&D</td><td>$1,520K</td><td>$1,498K</td><td class="green">-$22K</td><td><span class="pill pill-g">On Track</span></td></tr>
+          <tr><td>Customer Support</td><td>$800K</td><td>$782K</td><td class="green">-$18K</td><td><span class="pill pill-g">On Track</span></td></tr>
+          <tr><td>Legal</td><td>$360K</td><td>$355K</td><td class="green">-$5K</td><td><span class="pill pill-g">On Track</span></td></tr>
+          <tr><td>Procurement</td><td>$640K</td><td>$628K</td><td class="green">-$12K</td><td><span class="pill pill-g">On Track</span></td></tr>
+          <tr><td><strong>Total</strong></td><td><strong>$10,740K</strong></td><td><strong>$10,550K</strong></td><td class="green"><strong>-$190K</strong></td><td><span class="pill pill-g">On Track</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card2">
+      <div class="ct">Quarterly Variance Heatmap</div>
+      <svg width="100%" viewBox="0 0 240 200">
+        <!-- Grid heatmap: rows=depts, cols=quarters -->
+        <!-- Header -->
+        <text font-size="9" fill="var(--color-text-secondary)" x="75" y="12" text-anchor="middle" font-family="var(--font-sans)">Q1</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="115" y="12" text-anchor="middle" font-family="var(--font-sans)">Q2</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="155" y="12" text-anchor="middle" font-family="var(--font-sans)">Q3</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="195" y="12" text-anchor="middle" font-family="var(--font-sans)">Q4</text>
+        <!-- Rows -->
+        <text font-size="8" fill="var(--color-text-secondary)" x="58" y="28" text-anchor="end" font-family="var(--font-sans)">Sales</text>
+        <rect x="60" y="18" width="30" height="14" rx="2" fill="#C0DD97" opacity=".8"/>
+        <rect x="100" y="18" width="30" height="14" rx="2" fill="#C0DD97" opacity=".7"/>
+        <rect x="140" y="18" width="30" height="14" rx="2" fill="#EAF3DE"/>
+        <rect x="180" y="18" width="30" height="14" rx="2" fill="#C0DD97" opacity=".9"/>
+
+        <text font-size="8" fill="var(--color-text-secondary)" x="58" y="45" text-anchor="end" font-family="var(--font-sans)">Marketing</text>
+        <rect x="60" y="34" width="30" height="14" rx="2" fill="#F7C1C1"/>
+        <rect x="100" y="34" width="30" height="14" rx="2" fill="#EAF3DE"/>
+        <rect x="140" y="34" width="30" height="14" rx="2" fill="#C0DD97"/>
+        <rect x="180" y="34" width="30" height="14" rx="2" fill="#EAF3DE"/>
+
+        <text font-size="8" fill="var(--color-text-secondary)" x="58" y="62" text-anchor="end" font-family="var(--font-sans)">Operations</text>
+        <rect x="60" y="50" width="30" height="14" rx="2" fill="#EAF3DE"/>
+        <rect x="100" y="50" width="30" height="14" rx="2" fill="#C0DD97"/>
+        <rect x="140" y="50" width="30" height="14" rx="2" fill="#C0DD97"/>
+        <rect x="180" y="50" width="30" height="14" rx="2" fill="#EAF3DE"/>
+
+        <text font-size="8" fill="var(--color-text-secondary)" x="58" y="78" text-anchor="end" font-family="var(--font-sans)">IT</text>
+        <rect x="60" y="66" width="30" height="14" rx="2" fill="#F7C1C1"/>
+        <rect x="100" y="66" width="30" height="14" rx="2" fill="#F7C1C1"/>
+        <rect x="140" y="66" width="30" height="14" rx="2" fill="#FCEBEB"/>
+        <rect x="180" y="66" width="30" height="14" rx="2" fill="#F0F595" opacity=".8"/>
+
+        <text font-size="8" fill="var(--color-text-secondary)" x="58" y="94" text-anchor="end" font-family="var(--font-sans)">Finance</text>
+        <rect x="60" y="82" width="30" height="14" rx="2" fill="#EAF3DE"/>
+        <rect x="100" y="82" width="30" height="14" rx="2" fill="#EAF3DE"/>
+        <rect x="140" y="82" width="30" height="14" rx="2" fill="#C0DD97"/>
+        <rect x="180" y="82" width="30" height="14" rx="2" fill="#EAF3DE"/>
+
+        <text font-size="8" fill="var(--color-text-secondary)" x="58" y="110" text-anchor="end" font-family="var(--font-sans)">R&D</text>
+        <rect x="60" y="98" width="30" height="14" rx="2" fill="#C0DD97"/>
+        <rect x="100" y="98" width="30" height="14" rx="2" fill="#EAF3DE"/>
+        <rect x="140" y="98" width="30" height="14" rx="2" fill="#F7C1C1"/>
+        <rect x="180" y="98" width="30" height="14" rx="2" fill="#C0DD97"/>
+
+        <text font-size="8" fill="var(--color-text-secondary)" x="58" y="126" text-anchor="end" font-family="var(--font-sans)">HR</text>
+        <rect x="60" y="114" width="30" height="14" rx="2" fill="#EAF3DE"/>
+        <rect x="100" y="114" width="30" height="14" rx="2" fill="#EAF3DE"/>
+        <rect x="140" y="114" width="30" height="14" rx="2" fill="#C0DD97"/>
+        <rect x="180" y="114" width="30" height="14" rx="2" fill="#EAF3DE"/>
+
+        <!-- Legend -->
+        <rect x="62" y="148" width="10" height="10" rx="2" fill="#97C459"/>
+        <text font-size="8" fill="var(--color-text-secondary)" x="76" y="157" font-family="var(--font-sans)">Under budget</text>
+        <rect x="130" y="148" width="10" height="10" rx="2" fill="#F09595"/>
+        <text font-size="8" fill="var(--color-text-secondary)" x="144" y="157" font-family="var(--font-sans)">Over budget</text>
+        <rect x="62" y="165" width="10" height="10" rx="2" fill="#EAF3DE"/>
+        <text font-size="8" fill="var(--color-text-secondary)" x="76" y="174" font-family="var(--font-sans)">Within ±2%</text>
+        <rect x="130" y="165" width="10" height="10" rx="2" fill="#F0F595" opacity=".8"/>
+        <text font-size="8" fill="var(--color-text-secondary)" x="144" y="174" font-family="var(--font-sans)">Review needed</text>
+      </svg>
+    </div>
+  </div>
+</div>

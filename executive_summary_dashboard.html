@@ -1,0 +1,177 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:var(--font-sans)}
+.db{background:var(--color-background-tertiary);padding:16px;border-radius:12px}
+.db-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--color-border-tertiary)}
+.db-title{font-size:15px;font-weight:500;color:var(--color-text-primary)}
+.db-sub{font-size:11px;color:var(--color-text-secondary)}
+.db-badge{font-size:10px;padding:3px 8px;border-radius:20px;background:var(--color-background-info);color:var(--color-text-info)}
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
+.kpi{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:10px;padding:12px 14px}
+.kpi-lbl{font-size:11px;color:var(--color-text-secondary);margin-bottom:4px}
+.kpi-val{font-size:20px;font-weight:500;color:var(--color-text-primary);line-height:1}
+.kpi-sub{font-size:10px;margin-top:4px}
+.green{color:#3B6D11}.red{color:#A32D2D}.amber{color:#854F0B}
+.mid-row{display:grid;grid-template-columns:2fr 1fr;gap:10px;margin-bottom:12px}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:10px;padding:12px 14px}
+.card-title{font-size:12px;font-weight:500;color:var(--color-text-secondary);margin-bottom:10px}
+.bot-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.legend{display:flex;gap:12px;margin-bottom:8px}
+.leg-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px}
+</style>
+<div class="db">
+  <div class="db-hdr">
+    <div>
+      <div class="db-title">Finance & Budget Tracking — Executive Summary</div>
+      <div class="db-sub">FY 2024 &nbsp;|&nbsp; All figures in USD &nbsp;|&nbsp; Last refreshed: Today 06:30</div>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <span style="font-size:11px;color:var(--color-text-secondary)">Fiscal Year</span>
+      <select style="font-size:11px;padding:3px 6px;border-radius:6px;border:0.5px solid var(--color-border-secondary)"><option>FY 2024</option></select>
+      <span class="db-badge">Live</span>
+    </div>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi"><div class="kpi-lbl">Total Revenue</div><div class="kpi-val">$17.83M</div><div class="kpi-sub red">▼ $0.67M vs target</div></div>
+    <div class="kpi"><div class="kpi-lbl">Total Expenses</div><div class="kpi-val">$14.56M</div><div class="kpi-sub red">▲ $0.36M over budget</div></div>
+    <div class="kpi"><div class="kpi-lbl">EBITDA Margin</div><div class="kpi-val">20.4%</div><div class="kpi-sub amber">▼ 1.6pp vs 22% target</div></div>
+    <div class="kpi"><div class="kpi-lbl">YoY Growth</div><div class="kpi-val">+9.8%</div><div class="kpi-sub amber">▼ 2.2pp vs 12% target</div></div>
+  </div>
+
+  <div class="mid-row">
+    <div class="card">
+      <div class="card-title">Monthly Revenue vs Budget</div>
+      <div class="legend" style="font-size:10px;color:var(--color-text-secondary)">
+        <span><span class="leg-dot" style="background:#2E75B6"></span>Actual Revenue</span>
+        <span><span class="leg-dot" style="background:#E24B4A;opacity:.7"></span>Budget Target</span>
+      </div>
+      <svg width="100%" viewBox="0 0 460 110">
+        <defs><marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+        <!-- Y axis -->
+        <text font-size="9" fill="var(--color-text-secondary)" x="4" y="12" font-family="var(--font-sans)">$2.2M</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="4" y="60" font-family="var(--font-sans)">$1.4M</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="4" y="105" font-family="var(--font-sans)">$0.6M</text>
+        <!-- Grid lines -->
+        <line x1="38" y1="10" x2="455" y2="10" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+        <line x1="38" y1="55" x2="455" y2="55" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+        <line x1="38" y1="100" x2="455" y2="100" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+        <!-- Budget line (dashed red) -->
+        <polyline fill="none" stroke="#E24B4A" stroke-width="1.2" stroke-dasharray="4 3" opacity=".7"
+          points="44,52 76,50 110,54 144,48 176,43 210,45 244,40 278,37 312,42 346,33 380,28 414,22"/>
+        <!-- Actual line (blue) -->
+        <polyline fill="none" stroke="#2E75B6" stroke-width="2"
+          points="44,65 76,60 110,68 144,55 176,50 210,52 244,46 278,42 312,48 346,36 380,29 414,24"/>
+        <!-- Data points -->
+        <circle cx="44" cy="65" r="2.5" fill="#2E75B6"/><circle cx="76" cy="60" r="2.5" fill="#2E75B6"/>
+        <circle cx="110" cy="68" r="2.5" fill="#2E75B6"/><circle cx="144" cy="55" r="2.5" fill="#2E75B6"/>
+        <circle cx="176" cy="50" r="2.5" fill="#2E75B6"/><circle cx="210" cy="52" r="2.5" fill="#2E75B6"/>
+        <circle cx="244" cy="46" r="2.5" fill="#2E75B6"/><circle cx="278" cy="42" r="2.5" fill="#2E75B6"/>
+        <circle cx="312" cy="48" r="2.5" fill="#2E75B6"/><circle cx="346" cy="36" r="2.5" fill="#2E75B6"/>
+        <circle cx="380" cy="29" r="2.5" fill="#2E75B6"/><circle cx="414" cy="24" r="2.5" fill="#2E75B6"/>
+        <!-- Month labels -->
+        <text font-size="9" fill="var(--color-text-secondary)" x="38" y="110" font-family="var(--font-sans)">Jan</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="72" y="110" font-family="var(--font-sans)">Feb</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="106" y="110" font-family="var(--font-sans)">Mar</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="140" y="110" font-family="var(--font-sans)">Apr</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="172" y="110" font-family="var(--font-sans)">May</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="206" y="110" font-family="var(--font-sans)">Jun</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="240" y="110" font-family="var(--font-sans)">Jul</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="274" y="110" font-family="var(--font-sans)">Aug</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="308" y="110" font-family="var(--font-sans)">Sep</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="342" y="110" font-family="var(--font-sans)">Oct</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="376" y="110" font-family="var(--font-sans)">Nov</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="410" y="110" font-family="var(--font-sans)">Dec</text>
+      </svg>
+    </div>
+    <div class="card">
+      <div class="card-title">Expense by Category</div>
+      <svg width="100%" viewBox="0 0 200 120">
+        <!-- Donut chart -->
+        <circle cx="78" cy="58" r="46" fill="none" stroke="#1F3864" stroke-width="26" stroke-dasharray="72 218" stroke-dashoffset="0" opacity=".9"/>
+        <circle cx="78" cy="58" r="46" fill="none" stroke="#2E75B6" stroke-width="26" stroke-dasharray="56 234" stroke-dashoffset="-72" opacity=".85"/>
+        <circle cx="78" cy="58" r="46" fill="none" stroke="#5BA6D6" stroke-width="26" stroke-dasharray="43 247" stroke-dashoffset="-128" opacity=".8"/>
+        <circle cx="78" cy="58" r="46" fill="none" stroke="#A9D0EF" stroke-width="26" stroke-dasharray="32 258" stroke-dashoffset="-171" opacity=".75"/>
+        <circle cx="78" cy="58" r="46" fill="none" stroke="#D6E4F0" stroke-width="26" stroke-dasharray="87 203" stroke-dashoffset="-203" opacity=".7"/>
+        <!-- Center -->
+        <text x="78" y="54" text-anchor="middle" font-size="13" font-weight="500" fill="var(--color-text-primary)" font-family="var(--font-sans)">$14.56M</text>
+        <text x="78" y="67" text-anchor="middle" font-size="9" fill="var(--color-text-secondary)" font-family="var(--font-sans)">Total</text>
+        <!-- Legend -->
+        <rect x="135" y="12" width="8" height="8" rx="2" fill="#1F3864"/>
+        <text x="147" y="20" font-size="9" fill="var(--color-text-secondary)" font-family="var(--font-sans)">Personnel 25%</text>
+        <rect x="135" y="28" width="8" height="8" rx="2" fill="#2E75B6"/>
+        <text x="147" y="36" font-size="9" fill="var(--color-text-secondary)" font-family="var(--font-sans)">COGS 20%</text>
+        <rect x="135" y="44" width="8" height="8" rx="2" fill="#5BA6D6"/>
+        <text x="147" y="52" font-size="9" fill="var(--color-text-secondary)" font-family="var(--font-sans)">Tech 15%</text>
+        <rect x="135" y="60" width="8" height="8" rx="2" fill="#A9D0EF"/>
+        <text x="147" y="68" font-size="9" fill="var(--color-text-secondary)" font-family="var(--font-sans)">Mktg 11%</text>
+        <rect x="135" y="76" width="8" height="8" rx="2" fill="#D6E4F0"/>
+        <text x="147" y="84" font-size="9" fill="var(--color-text-secondary)" font-family="var(--font-sans)">Other 29%</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="bot-row">
+    <div class="card">
+      <div class="card-title">Department Spend — Budget Utilization</div>
+      <svg width="100%" viewBox="0 0 340 105">
+        <!-- Department bars -->
+        <text font-size="9" fill="var(--color-text-secondary)" x="2" y="14" font-family="var(--font-sans)">Sales</text>
+        <rect x="80" y="4" width="200" height="12" rx="3" fill="var(--color-border-tertiary)"/>
+        <rect x="80" y="4" width="190" height="12" rx="3" fill="#2E75B6" opacity=".8"/>
+        <text font-size="9" fill="var(--color-text-secondary)" x="285" y="14" font-family="var(--font-sans)">95%</text>
+
+        <text font-size="9" fill="var(--color-text-secondary)" x="2" y="30" font-family="var(--font-sans)">Marketing</text>
+        <rect x="80" y="20" width="200" height="12" rx="3" fill="var(--color-border-tertiary)"/>
+        <rect x="80" y="20" width="218" height="12" rx="3" fill="#E24B4A" opacity=".75"/>
+        <text font-size="9" fill="#A32D2D" x="300" y="30" font-family="var(--font-sans)">109%</text>
+
+        <text font-size="9" fill="var(--color-text-secondary)" x="2" y="46" font-family="var(--font-sans)">Operations</text>
+        <rect x="80" y="36" width="200" height="12" rx="3" fill="var(--color-border-tertiary)"/>
+        <rect x="80" y="36" width="198" height="12" rx="3" fill="#2E75B6" opacity=".8"/>
+        <text font-size="9" fill="var(--color-text-secondary)" x="282" y="46" font-family="var(--font-sans)">99%</text>
+
+        <text font-size="9" fill="var(--color-text-secondary)" x="2" y="62" font-family="var(--font-sans)">IT</text>
+        <rect x="80" y="52" width="200" height="12" rx="3" fill="var(--color-border-tertiary)"/>
+        <rect x="80" y="52" width="212" height="12" rx="3" fill="#EF9F27" opacity=".8"/>
+        <text font-size="9" fill="#854F0B" x="295" y="62" font-family="var(--font-sans)">106%</text>
+
+        <text font-size="9" fill="var(--color-text-secondary)" x="2" y="78" font-family="var(--font-sans)">R&D</text>
+        <rect x="80" y="68" width="200" height="12" rx="3" fill="var(--color-border-tertiary)"/>
+        <rect x="80" y="68" width="196" height="12" rx="3" fill="#2E75B6" opacity=".8"/>
+        <text font-size="9" fill="var(--color-text-secondary)" x="280" y="78" font-family="var(--font-sans)">98%</text>
+
+        <text font-size="9" fill="var(--color-text-secondary)" x="2" y="94" font-family="var(--font-sans)">HR</text>
+        <rect x="80" y="84" width="200" height="12" rx="3" fill="var(--color-border-tertiary)"/>
+        <rect x="80" y="84" width="192" height="12" rx="3" fill="#2E75B6" opacity=".8"/>
+        <text font-size="9" fill="var(--color-text-secondary)" x="276" y="94" font-family="var(--font-sans)">96%</text>
+        <!-- Budget line -->
+        <line x1="280" y1="0" x2="280" y2="104" stroke="#E24B4A" stroke-width="1" stroke-dasharray="3 2"/>
+      </svg>
+    </div>
+    <div class="card">
+      <div class="card-title">Net Profit Margin Trend (Monthly)</div>
+      <svg width="100%" viewBox="0 0 300 105">
+        <defs>
+          <linearGradient id="mg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2E75B6" stop-opacity=".3"/>
+            <stop offset="100%" stop-color="#2E75B6" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <text font-size="9" fill="var(--color-text-secondary)" x="0" y="12" font-family="var(--font-sans)">25%</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="0" y="55" font-family="var(--font-sans)">17%</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="0" y="100" font-family="var(--font-sans)">9%</text>
+        <line x1="26" y1="10" x2="296" y2="10" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+        <line x1="26" y1="52" x2="296" y2="52" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+        <line x1="26" y1="96" x2="296" y2="96" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+        <polygon fill="url(#mg)"
+          points="26,72 48,65 70,70 92,60 114,55 136,58 158,52 180,48 202,54 224,44 246,38 268,32 268,96 26,96"/>
+        <polyline fill="none" stroke="#2E75B6" stroke-width="2"
+          points="26,72 48,65 70,70 92,60 114,55 136,58 158,52 180,48 202,54 224,44 246,38 268,32"/>
+        <text font-size="9" fill="var(--color-text-secondary)" x="24" y="105" font-family="var(--font-sans)">Jan</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="136" y="105" font-family="var(--font-sans)">Jun</text>
+        <text font-size="9" fill="var(--color-text-secondary)" x="258" y="105" font-family="var(--font-sans)">Dec</text>
+      </svg>
+    </div>
+  </div>
+</div>
